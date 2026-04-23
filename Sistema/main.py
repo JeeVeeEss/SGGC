@@ -4,6 +4,7 @@ from Resistor import Resistor
 import platform
 import os
 from Style import Style
+import json
 
 #verificar o sistema operac.
 sys = platform.system()
@@ -36,7 +37,7 @@ def main():
     limpador(sys)
     tensao = configurar_circuito()
     circuito = Circuito(tensao=tensao)
-
+    
     while True:
         #limpador(sys)
         print("-------------\n-R(resistor)\n-C(capacitor)\n-X(Sair do programa)")
@@ -69,4 +70,5 @@ def main():
                 dados = 1
                 circuito.adicionar_componente(operacao, Resistor('', '', dados))
         print(circuito) # Apenas para teste, sem função estrutural.
+
 main()
