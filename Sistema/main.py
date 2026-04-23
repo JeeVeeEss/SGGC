@@ -21,16 +21,11 @@ def limpador(sys):
 
 def configurar_circuito():
     try: 
-        obj = int(input("Digite a tensão do circuito: ")) 
+        obj = int(input("Digite a tensão do circuito: "))
+        return obj
     except ValueError:
         return 220
-    '''
-    if int(obj):
-        return int(obj)
-    else:
-        return 220
 
-    '''
 def validar_dado(valor:None):
     if valor:
         pass
@@ -64,8 +59,11 @@ def main():
                 dados  = str(input('Digite os dados: \n- Nome do Componente.\n- Nome do Fabricante.\n- Valor(ohms/farads), respectivamente: ')) or '   '
                 #limpador(sys)
                 if dados:
-                    dados = dados.split('   ')
-                    circuito.adicionar_componente(operacao, Resistor(dados[0], dados[1], dados[2]))
+                    dados = dados.split(' ')
+                    try:
+                        circuito.adicionar_componente(operacao, Resistor(dados[0], dados[1], dados[2]))
+                    except IndexError:
+                        print(len(dados), dados)
             except ValueError:
                 dados = 1
                 circuito.adicionar_componente(operacao, Resistor('', '', dados))

@@ -4,6 +4,3 @@ class ComponenteEletrico:
         self.nome = nome
         self.fabricante = fabricante
         self.tensao_max = tensao_max
-        print('''
-              Circuito iniciado!
-              ''')

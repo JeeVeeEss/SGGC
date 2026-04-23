@@ -6,13 +6,9 @@ class Capacitor(ComponenteEletrico):
         self.capacitancia = capacitancia
 
     def calcular_impedancia(self):
-        if self.capacitancia == '':
-            self.capacitancia = 1
-            impedancia = 1/(2*math.pi*60*int(self.capacitancia))
-            return impedancia
-        else:
-            impedancia = 1/(2*math.pi*60*int(self.capacitancia))
-            return impedancia
+        
+        impedancia = 1/(2*math.pi*60*int(self.capacitancia))
+        return impedancia
            
     def __str__(self):
         return self.nome, self.fabricante, self.capacitancia
