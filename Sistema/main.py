@@ -3,6 +3,7 @@ from Capacitor import Capacitor
 from Resistor import Resistor
 import platform
 import os
+from Style import Style
 
 #verificar o sistema operac.
 sys = platform.system()
@@ -27,7 +28,7 @@ def configurar_circuito():
         return 220
 
 def validar_dado(valor:None):
-    if valor:
+    if type(valor):
         pass
     else:
         raise TypeError('Valor inválido. Tente novamente')
@@ -56,7 +57,7 @@ def main():
             limpador(sys)
             dados = ""
             try:
-                dados  = str(input('Digite os dados: \n- Nome do Componente.\n- Nome do Fabricante.\n- Valor(ohms/farads), respectivamente: ')) or '   '
+                dados  = str(input('Digite os dados: \n- Nome do Componente.\n- Nome do Fabricante.\n- Valor(ohms/farads), respectivamente(exemplo: q q 23)\n(Em caso de Valores nulos, os atributos serão nulos, menos o valor que será 1): ')) or '   '
                 #limpador(sys)
                 if dados:
                     dados = dados.split(' ')

@@ -6,7 +6,10 @@ class Resistor(ComponenteEletrico):
         self.resistencia = int(resistencia)
         if resistencia == '' or resistencia == '   ':
             self.resistencia = 1
-    def __add__(self, resistor_n):
+
+    def __add__(self, resistor_n): # Método alternativo para calcular a impedância resistiva
         resistor_eq = self.resistencia + resistor_n.resistencia
         return resistor_eq
+
+    
         
