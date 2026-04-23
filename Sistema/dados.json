@@ -1,0 +1,13 @@
+{
+    "resistores": {
+        "nome": [],
+        "fabricante": [],
+        "dados": []
+    },
+    
+    "capacitores": {
+        "nome": [],
+        "fabricante": [],
+        "dados": []
+    }
+}
